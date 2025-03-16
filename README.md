@@ -1,27 +1,66 @@
-# Offboarding
+# Employee Offboarding System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+This project is an Angular 19 application that manages the employee offboarding process, focusing on the return and management of company equipment.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Employee Dashboard**
+  - View a list of all employees with their status
+  - Search/filter employees by name or department
+- **Employee Details**
+  - View detailed employee information
+  - View assigned equipment
+- **Offboarding Process**
+  - Process employee offboarding with form validation
+  - Update employee status without page reload
+  - Collect shipping address and contact information
 
-## Code scaffolding
+## Environment Configuration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The application uses different environment configurations:
 
-## Build
+- **Development Mode**: Uses a mock API interceptor to simulate backend responses
+- **Production Mode**: Connects to a real backend API (requires backend implementation)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Environment files are located in `src/environments/`:
 
-## Running unit tests
+- `environment.ts` - Used during development
+- `environment.production.ts` - Used for production builds
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Setup and Running
 
-## Running end-to-end tests
+1. Install dependencies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+npm install
+```
 
-## Further help
+2. Start the development server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+ng serve
+```
+
+3. Open your browser and navigate to `http://localhost:4200/`
+
+## Building for Production
+
+To build the application for production:
+
+```
+ng build --configuration=production
+```
+
+This will:
+
+- Use the production environment configuration
+- Disable the mock API interceptor
+- Optimize the application for deployment
+
+**Note**: You'll need to implement a real backend API or update the `apiUrl` in the production environment file.
+
+## Mock API Endpoints
+
+- `GET /employees` - Retrieves list of employees
+- `GET /employees/{id}` - Retrieves a specific employee by ID
+- `POST /users/{id}/offboard` - Offboards an employee with the provided details

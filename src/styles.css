@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.success-snackbar {
+  --mdc-snackbar-container-color: #4caf50;
+  --mdc-snackbar-supporting-text-color: white;
+}
+
+.error-snackbar {
+  --mdc-snackbar-container-color: #f44336;
+  --mdc-snackbar-supporting-text-color: white;
+}
+
+.mat-mdc-notch-piece.mdc-notched-outline__notch {
+  border-right: none !important;
+}
